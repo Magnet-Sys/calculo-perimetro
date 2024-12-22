@@ -1,20 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Cálculos de Perímetros</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item>
+    <ion-select
+      label="Figura Geométrica"
+      placeholder="Escoja una figura geométrica"
+      [(ngModel)]="figuraSeleccionada"
+      (ionChange)="figuraCambiada()"
+    >
+      <ion-select-option value="circulo">Círculo</ion-select-option>
+      <ion-select-option value="triangulo">Triángulo</ion-select-option>
+    </ion-select>
+  </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div *ngIf="figuraSeleccionada === 'circulo'">
+    <app-circulo></app-circulo>
+  </div>
+
+  <div *ngIf="figuraSeleccionada === 'triangulo'">
+    <app-triangulo></app-triangulo>
   </div>
 </ion-content>
