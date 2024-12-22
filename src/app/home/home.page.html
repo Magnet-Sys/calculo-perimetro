@@ -1,27 +1,36 @@
+<!-- Define la cabecera de la página -->
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <!-- El título que se muestra en la cabecera -->
     <ion-title>Cálculos de Perímetros</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<!-- Define el contenido principal de la página -->
 <ion-content [fullscreen]="true">
+  <!-- Representa un elemento de una lista, en este caso, contiene el selector de figuras geométricas -->
   <ion-item>
+    <!-- Componente de Ionic para crear un menú desplegable de selección -->
     <ion-select
       label="Figura Geométrica"
       placeholder="Escoja una figura geométrica"
       [(ngModel)]="figuraSeleccionada"
       (ionChange)="figuraCambiada()"
     >
+      <!-- Opción del selector para elegir círculo -->
       <ion-select-option value="circulo">Círculo</ion-select-option>
+      <!-- Opción del selector para elegir triángulo -->
       <ion-select-option value="triangulo">Triángulo</ion-select-option>
     </ion-select>
   </ion-item>
 
+  <!-- Directiva estructural *ngIf muestra el contenido del <div> solo si la variable figuraSeleccionada es igual a 'circulo' -->
   <div *ngIf="figuraSeleccionada === 'circulo'">
+    <!-- Componente personalizado para la entrada de datos y cálculo del perímetro del círculo -->
     <app-circulo></app-circulo>
   </div>
-
+  <!-- Directiva estructural *ngIf muestra el contenido del <div> solo si la variable figuraSeleccionada es igual a 'triangulo' -->
   <div *ngIf="figuraSeleccionada === 'triangulo'">
+    <!-- Componente personalizado para la entrada de datos y cálculo del perímetro del triángulo -->
     <app-triangulo></app-triangulo>
   </div>
 </ion-content>
