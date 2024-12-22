@@ -1,9 +1,12 @@
 <ion-card>
   <ion-card-header>
+    <!-- Título de la tarjeta, mostrando el nombre de la figura -->
     <ion-card-title class="ion-text-left">{{ figura.nombre }}</ion-card-title>
+    <!-- Subtítulo que indica que se está mostrando el perímetro de la figura -->
     <ion-card-subtitle class="ion-text-left">Perímetro</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
+    <!-- Descripción general de lo que es el perímetro de un triángulo -->
     <p class="description">
       El perímetro de un triángulo es la suma de sus tres lados. En otras
       palabras, es la medida total del contorno o borde del triángulo.
@@ -12,12 +15,13 @@
     <div class="imagen-container">
       <img src="assets/triangulo.png" alt="Triángulo" />
     </div>
-
+    <!-- Fórmula para calcular el perímetro de un triángulo (p = a + b + c) -->
     <p class="formula">p = a + b + c</p>
-
+    <!-- Formulario para ingresar los lados del triángulo -->
     <form>
       <ion-item>
         <ion-label position="floating">Lado A (cm)</ion-label>
+        <!-- El valor ingresado para el lado A se guarda en la variable 'ladoA' usando la vinculación bidireccional con 'ngModel' -->
         <ion-input
           type="number"
           [(ngModel)]="ladoA"
@@ -27,6 +31,7 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating">Lado B (cm)</ion-label>
+        <!-- El valor ingresado para el lado B se guarda en la variable 'ladoB' -->
         <ion-input
           type="number"
           [(ngModel)]="ladoB"
@@ -36,6 +41,7 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating">Lado C (cm)</ion-label>
+        <!-- El valor ingresado para el lado C se guarda en la variable 'ladoC' -->
         <ion-input
           type="number"
           [(ngModel)]="ladoC"
@@ -43,6 +49,7 @@
           required
         ></ion-input>
       </ion-item>
+      <!-- Botón que, al ser presionado, ejecutará la función 'calcular()' para calcular el perímetro del triángulo -->
       <ion-button
         size="small"
         class="calculate-button"
@@ -52,8 +59,9 @@
         Calcular el perímetro
       </ion-button>
     </form>
-
+    <!-- Solo muestra el resultado si la variable 'perimetro' tiene un valor asignado -->
     <div *ngIf="perimetro" class="result">
+      <!-- Muestra el valor calculado del perímetro -->
       <ion-text>El perímetro es {{ perimetro }}</ion-text>
     </div>
   </ion-card-content>
