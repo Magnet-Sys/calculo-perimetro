@@ -1,17 +1,24 @@
 <ion-card class="circulo-card">
+  <!-- Tarjeta de información que contiene el título, contenido y formulario para calcular el perímetro -->
   <ion-card-header>
+    <!-- Cabecera-->
     <ion-card-title class="ion-text-left">{{ figura.nombre }}</ion-card-title>
+    <!-- Título de la tarjeta, mostrando el nombre de la figura -->
     <ion-card-subtitle class="ion-text-left">Perímetro</ion-card-subtitle>
+    <!-- Subtítulo de la tarjeta que indica que se mostrará información sobre el perímetro -->
   </ion-card-header>
   <ion-card-content>
+    <!-- Contenido principal de la tarjeta -->
     <p class="description">
       El perímetro de un círculo es la longitud de la línea que forma su borde.
     </p>
+    <!-- Descripción general de lo que es el perímetro de un círculo -->
     <p class="where">
       <b>Donde:</b>
     </p>
-
+    <!-- Introducción a los parámetros usados en la fórmula -->
     <div class="information-container">
+      <!-- Sección que describe los parámetros de la fórmula -->
       <div class="text-info">
         <p><b>P:</b> perímetro</p>
         <p><b>d:</b> diámetro</p>
@@ -22,6 +29,7 @@
     </div>
 
     <form>
+      <!-- Formulario para ingresar el valor del radio y calcular el perímetro -->
       <ion-item class="input-item">
         <ion-label position="floating">Radio (cm)</ion-label>
         <ion-input
@@ -32,7 +40,7 @@
           inputmode="decimal"
         ></ion-input>
       </ion-item>
-
+      <!-- Botón que al ser presionado llama a la función 'calcular' para realizar el cálculo del perímetro -->
       <ion-button
         size="small"
         class="calculate-button"
@@ -41,8 +49,9 @@
         >Calcular el perímetro</ion-button
       >
     </form>
-
+    <!-- Solo muestra el resultado si 'perimetro' no es null -->
     <div *ngIf="perimetro !== null" class="result">
+      <!-- Muestra el resultado del cálculo del perímetro -->
       <p>El perímetro es {{ perimetro }} cm</p>
     </div>
   </ion-card-content>
